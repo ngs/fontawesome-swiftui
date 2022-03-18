@@ -24,5 +24,6 @@ final class FontAwesomeTests: XCTestCase {
 
     func testInitWithUnicode() throws {
         XCTAssertEqual(FontAwesome.Icon(unicode: "f3f6"), .steamSymbol)
+        XCTAssertEqual(FontAwesome.Icon(unicode: "44"), .d)
     }
 }
