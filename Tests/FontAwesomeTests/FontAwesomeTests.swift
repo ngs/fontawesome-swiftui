@@ -3,7 +3,7 @@ import XCTest
 import SwiftUI
 
 final class FontAwesomeTests: XCTestCase {
-    func testExample() throws {
+    func testNames() throws {
         [
             (FontAwesome.fontAwesomeName(style: .duotone, pro: false), "Font Awesome 6 Duotone Solid"),
             (FontAwesome.fontAwesomeName(style: .duotone, pro: true), "Font Awesome 6 Duotone Solid"),
@@ -20,5 +20,9 @@ final class FontAwesomeTests: XCTestCase {
         ].forEach { (actual, expected) in
             XCTAssertEqual(actual, expected)
         }
+    }
+
+    func testInitWithUnicode() throws {
+        XCTAssertEqual(FontAwesome.Icon(unicode: "f3f6"), .steamSymbol)
     }
 }
