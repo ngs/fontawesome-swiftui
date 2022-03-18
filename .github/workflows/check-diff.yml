@@ -1,0 +1,11 @@
+name: Check Icon enum diff
+
+on: push
+
+jobs:
+  check-diff:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make generate
+      - run: git diff --exit-code Sources/FontAwesome/Icon.swift
