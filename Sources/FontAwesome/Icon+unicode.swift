@@ -7,13 +7,15 @@
 
 import Foundation
 
+typealias ByteArray = [UInt8]
+
 extension String {
-    func bytes() -> [UInt8]? {
+    func bytes() -> ByteArray? {
         let length = count
         if length & 1 != 0 {
             return nil
         }
-        var bytes = [UInt8]()
+        var bytes = ByteArray()
         bytes.reserveCapacity(length / 2)
         var index = startIndex
         for _ in 0..<length / 2 {
@@ -38,5 +40,12 @@ extension Icon {
             return nil
         }
         self.init(rawValue: value)
+    }
+
+    public var unicode: String {
+        let scalars = rawValue.unicodeScalars
+        let value = scalars[scalars.startIndex].value
+
+        return String(format: "%02x", value)
     }
 }
