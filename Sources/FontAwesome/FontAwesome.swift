@@ -3,12 +3,12 @@ import SwiftUI
 public let version = "6"
 
 func fontAwesomeName(style: Style, pro: Bool) -> String {
-    let prefix = "Font Awesome \(version)"
+    let prefix = "FontAwesome\(version)"
     switch style {
     case .brands, .duotone:
-        return "\(prefix) \(style.rawValue)"
+        return "\(prefix)\(style.rawValue)"
     default:
-        return "\(prefix) \(pro ? "Pro" : "Free") \(style.rawValue)"
+        return "\(prefix)\(pro ? "Pro" : "Free")-\(style.rawValue)"
     }
 }
 
