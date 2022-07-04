@@ -12,6 +12,6 @@ public enum Style: String {
     case regular = "Regular"
     case light = "Light"
     case thin = "Thin"
-    case duotone = "Duotone Solid"
-    case brands = "Brands Regular"
+    case duotone = "Duotone-Solid"
+    case brands = "Brands-Regular"
 }
